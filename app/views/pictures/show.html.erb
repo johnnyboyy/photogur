@@ -1,19 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @picture.title %>
+  <h2>Title: <%= @picture.title %></h2>
 </p>
 
 <p>
-  <strong>Artist:</strong>
-  <%= @picture.artist %>
+  <h3>Artist: <%= @picture.artist %></h3>
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @picture.image %>
+  <img src=<%= @picture.image %>>
 </p>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
+# <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>
+

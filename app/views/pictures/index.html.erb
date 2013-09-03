@@ -1,30 +1,14 @@
-<h1>Listing pictures</h1>
+<h1>Pictures!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Artist</th>
-      <th>Image</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.title %></td>
-        <td><%= picture.artist %></td>
-        <td><%= picture.image %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @pictures.each do |picture| %>
+  <span>Title: <%= picture.title %></span><br>
+  <span>Artist: <%= picture.artist %></span><br>
+  <!-- <span><%= link_to 'Show', picture %></span> -->
+  <!-- <span><%= link_to 'Edit', edit_picture_path(picture) %></span> -->
+  <!-- <span><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></span> --><br>
+  <!-- <img src=<%= picture.image %>><br> -->
+  <%= link_to image_tag(picture.image), picture %><br>
+<% end %>
 
 <br>
 
