@@ -5,20 +5,23 @@
 
 img {
 	float: none;
-	z-index: -1000;
-	margin-top: -80px;	
 	width: 400px;
 	height: 300px;
-	float: left;
 	display: inline;
 }
 
-.pic_container {
+div.container {
+	float: left;
+	margin: 5px;
+}
+
+
+div.pic_container a {
+
 	float: left;
 	width: 400px;
 	height: 300px;
-	margin: 5px;
-}
+} 
 
 
 img:hover {
@@ -28,27 +31,23 @@ img:hover {
 }
 
 h3 {
-	z-index: 1000;
 	font-size: 16px;
-	background: #efefef;
 	color: rgba(23,23,23, 0.8);
 	display: block;
 	width: 380px;
-	padding: 0 10px;
+	padding: 0;
 	margin: 0;
-	text-shadow: 10px 15px 0px #efefef;
+	margin-bottom: 10px;
 }
 
 div.text_background {
-
-	margin-top: 20px;
 	background-color: #efefef;
 	color: rgba(23,23,23, 0.8);
 	width: 400px;
 }
 
 div.master_container {
-	width: 820px;
+	width: 1260px;
 	margin: 0 auto;
 }
 
@@ -63,4 +62,59 @@ div.show_img > img:hover {
 	height: auto;
 	width: auto;
 	border: none;
+}
+
+h4 {
+	color: #b1b1b1;
+	text-shadow: 0px 0px 30px rgba(150, 150, 150, 1);
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 20px;
+	margin: 5px;
+	margin-left: 80px;
+	margin-top: 10px;
+}
+
+h2 {
+	color: #e1e1e1;
+	text-shadow: 0px 0px 30px rgba(150, 150, 150, 1);
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 26px;
+	margin-left: 60px;
+}
+
+li.show_actions {
+	float: left;
+	font-size: 18px;
+}
+
+#menu li.nav_on_show {
+	margin-left: 50px;
+	border-left: 2pt solid white;
+	padding: 0px;
+
+}
+
+#new_picture {
+	margin: 20px;
+	padding: 10px;
+	color: white;
+	font-size: 16px;
+}
+
+body {
+	background: url('http://files.customize.org/download/wallpapers/70510/75059/tabac-1920x1200.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	min-height: 1000px;
+	margin: 0px;
+	margin-top: 10px;
+}
+
+#notice {
+	font-size: 32px;
+	margin: 20px 10px;
+	padding: 5px;
+
 }

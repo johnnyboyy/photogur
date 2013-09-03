@@ -1,20 +1,20 @@
-
+</ul>
 <div class="master_container">
+
+
+<p id="notice"><%= notice %></p>
+
   <% @pictures.each do |picture| %>
-    <div class="pic_container">
+    <div class="container">
+      <%= link_to image_tag(picture.URL), picture %> 
       <div class="text_background">
-        <h3><%= picture.title %></h3><br>
+        <h3><%= picture.title %></h3>
         <h3>By: <%= picture.artist %></h3>
       </div>
-      <!-- <span><%= link_to 'Show', picture %></span> -->
-      <!-- <span><%= link_to 'Edit', edit_picture_path(picture) %></span> -->
-      <!-- <span><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></span> --><br>
-      <!-- <img src=<%= picture.image %>><br> -->
-      <%= link_to image_tag(picture.image), picture %><br>
     </div>
   <% end %>
 </div>
-
+  
 <br>
 
 

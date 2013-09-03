@@ -11,15 +11,14 @@
 <ul id="menu">
 	<li><%= link_to 'Photogur', pictures_path %></li>
 	<li><%= link_to 'New Picture', new_picture_path %></li>
-	<!-- <h1>Photogur</h1> -->
-	<!-- <span class="new_pic"><%= link_to 'New Picture', new_picture_path %></span> -->
-</ul>
-
-<div id="body">
-<%= yield %>
-</div>
+	<%= yield %>
 
 </body>
 
-<div id="footer">Footer</div>
+<div id="footer">
+
+<span>Copyright: <%= Time.new.year %></span>
+
+<span>John Zdanis</span>
+</div>
 </html>

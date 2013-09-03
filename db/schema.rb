@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20130903162606) do
   create_table "pictures", force: true do |t|
     t.string   "title"
     t.string   "artist"
-    t.string   "image"
+    t.string   "URL"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,3 +1,7 @@
+<li class="nav_on_show"><%= link_to 'Edit', edit_picture_path(@picture) %></li>
+<li><%= link_to 'Destroy', @picture, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+</ul>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,12 +9,13 @@
 </p>
 
 <p>
-  <h2>Artist: <%= @picture.artist %></h2>
+  <h4>Artist: <%= @picture.artist %></h4>
 </p>
-<div class="show_img">
-	<img src=<%= @picture.image %>>
-</div>
 
-# <%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+
+
+
+<div class="show_img">
+	<img src=<%= @picture.URL %>>
+</div>
 
