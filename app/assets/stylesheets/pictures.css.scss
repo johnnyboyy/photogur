@@ -1,3 +1,66 @@
 // Place all the styles related to the pictures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+img {
+	float: none;
+	z-index: -1000;
+	margin-top: -80px;	
+	width: 400px;
+	height: 300px;
+	float: left;
+	display: inline;
+}
+
+.pic_container {
+	float: left;
+	width: 400px;
+	height: 300px;
+	margin: 5px;
+}
+
+
+img:hover {
+	border: 2pt solid black;
+	width: 396px;
+	height: 296px;
+}
+
+h3 {
+	z-index: 1000;
+	font-size: 16px;
+	background: #efefef;
+	color: rgba(23,23,23, 0.8);
+	display: block;
+	width: 380px;
+	padding: 0 10px;
+	margin: 0;
+	text-shadow: 10px 15px 0px #efefef;
+}
+
+div.text_background {
+
+	margin-top: 20px;
+	background-color: #efefef;
+	color: rgba(23,23,23, 0.8);
+	width: 400px;
+}
+
+div.master_container {
+	width: 820px;
+	margin: 0 auto;
+}
+
+div.show_img > img {
+	height: auto;
+	width: auto;
+	margin-top: 36px;
+	margin-left: 60px;
+}
+
+div.show_img > img:hover {
+	height: auto;
+	width: auto;
+	border: none;
+}
