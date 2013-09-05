@@ -1,9 +1,15 @@
-<li class="nav_on_show"><%= link_to 'Edit', edit_picture_path(@picture) %></li>
-<li><%= link_to 'Destroy', @picture, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-<li><%= link_to 'Back', pictures_path %></li>
+
+	<li><%= link_to 'Back', pictures_path %></li>
+<% if user_signed_in? && current_user.id == @picture.user_id %>
+
+	<li class="nav_on_show"><%= link_to 'Edit', edit_picture_path(@picture) %></li>
+	<li><%= link_to 'Destroy', @picture, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+	<% end %>
 </ul>
 
-<p id="notice"><%= notice %></p>
+
+
 
 <p>
   <h2>Title: <%= @picture.title %></h2>
@@ -14,16 +20,18 @@
 </p>
 
 
-
+<div class="rating"><h2>Likes: 
+	<%= @picture.rating %></h2>
+	<% if user_signed_in? %>
+		<%= button_to 'Like', upvote_picture_path %>
+	<% end %>
+</div>
 
 <div class="show_img">
 	<img src=<%= @picture.URL %>>
 </div>
 
-<div class="rating"><h2>Likes: 
-	<%= @picture.rating %></h2>
-	<%= button_to 'Like', upvote_picture_path %>
-</div>
+
 
 
 
@@ -40,9 +48,9 @@
 
 
 
-
+<% if user_signed_in? %>
 <div id="new_comment_wrapper">
-<h1 class="comment_h">New Comment</h1>
+	<h1 class="comment_h">New Comment</h1>
 	<%= form_for([@picture, @picture.comments.build]) do |f| %>
 
 	 <p class="name_field">
@@ -58,6 +66,7 @@
 	  </p>
 	<% end %>
 </div>
+<% end %>
 
 
 

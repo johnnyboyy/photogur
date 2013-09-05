@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
-    http_basic_authenticate_with name: "john", password: "secret", only: [ :destroy, :edit ]
   before_action :set_picture, only: [:show, :edit, :update, :destroy, :upvote]
+  http_basic_authenticate_with name: "john", password: "secret", except: [:index, :show]
+
 
   # GET /pictures
   # GET /pictures.json
@@ -35,13 +36,13 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
 
+    @picture.user_id = current_user.id
+    
     respond_to do |format|
       if @picture.save
         format.html { redirect_to pictures_url, notice: 'Picture was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @picture }
       else
         format.html { render action: 'new' }
-        format.json { render json: @picture.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -52,10 +53,8 @@ class PicturesController < ApplicationController
     respond_to do |format|
       if @picture.update(picture_params)
         format.html { redirect_to @picture, notice: 'Picture was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @picture.errors, status: :unprocessable_entity }
       end
     end
   end
