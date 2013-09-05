@@ -27,7 +27,7 @@
 <div id="comment_container">
 	<h1 class="comment_h">Comments</h1>
 	<span class="comment_bottom_border"></span>
-	<% if @picture.comments.length > 1 %>
+	<% if @picture.comments.length > 0 %>
 		<%= render @picture.comments %>
 	<% else %>
 		<h3 class="comment_h">No Comments</h3>
