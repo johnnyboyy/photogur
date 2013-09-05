@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: [:show, :edit, :update, :destroy, :upvote]
 
   # GET /pictures
   # GET /pictures.json
@@ -19,6 +19,14 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1/edit
   def edit
+  end
+
+
+  def upvote
+    picture = Picture.find(params[:id])
+    picture.rating += 1
+    picture.save
+    redirect_to picture
   end
 
   # POST /pictures

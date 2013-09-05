@@ -15,7 +15,10 @@
 
 
 
-
+<div class="rating">Likes: 
+	<%= @picture.rating %>
+	<%= button_to 'Like', picture_upvote_path %>
+</div>
 <div class="show_img">
 	<img src=<%= @picture.URL %>>
 </div>

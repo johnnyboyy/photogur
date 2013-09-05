@@ -1,7 +1,12 @@
 Photogur::Application.routes.draw do
+  resources :users
+
   resources :pictures do
-    resources :comments
+
+    resources :comments, only: [:create, :destroy]
   end
+
+  post 'picture/:id/upvote' => 'pictures#upvote', :as => :picture_upvote
 
   root :to => 'pictures#index'
 
