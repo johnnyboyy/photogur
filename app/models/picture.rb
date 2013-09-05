@@ -1,4 +1,5 @@
 class Picture < ActiveRecord::Base
+	has_many :comments
 
 
   validates :title, length: { minimum: 2 }

@@ -1,5 +1,7 @@
 Photogur::Application.routes.draw do
-  resources :pictures
+  resources :pictures do
+    resources :comments
+  end
 
   root :to => 'pictures#index'
 

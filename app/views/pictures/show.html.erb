@@ -20,3 +20,41 @@
 	<img src=<%= @picture.URL %>>
 </div>
 
+
+
+
+
+<div id="comment_container">
+	<h1 class="comment_h">Comments</h1>
+	<span class="comment_bottom_border"></span>
+	<% if @picture.comments.length > 1 %>
+		<%= render @picture.comments %>
+	<% else %>
+		<h3 class="comment_h">No Comments</h3>
+	<% end %>
+</div>
+
+
+
+
+
+<div id="new_comment_wrapper">
+<h1 class="comment_h">New Comment</h1>
+	<%= form_for([@picture, @picture.comments.build]) do |f| %>
+
+	 <p class="name_field">
+	    <%= f.label :name %><br />
+	    <%= f.text_field :name %>
+	  </p>
+	  <p class="body_field">
+	    <%= f.label :body %><br />
+	    <%= f.text_area :body %>
+	  </p>
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>
+</div>
+
+
+

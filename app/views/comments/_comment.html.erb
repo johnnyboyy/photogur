@@ -1,0 +1,15 @@
+<% if comment.id != nil %>
+	<h6><%= comment.name %></h6>
+	<p class="comment_text">
+	  <%= comment.body %>
+	</p>
+	<span class="delete_button_comment">
+		<%= link_to 'Delete', [comment.picture, comment],
+		               method: :delete,
+		               data: { confirm: 'Are you sure?' } %></span>
+
+	<br>
+	<br>
+
+	<span class="comment_bottom_border"></span>
+<% end %>
