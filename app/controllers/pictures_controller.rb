@@ -1,6 +1,5 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy, :upvote]
-  http_basic_authenticate_with name: "john", password: "secret", except: [:index, :show]
 
 
   # GET /pictures
