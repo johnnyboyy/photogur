@@ -80,12 +80,22 @@ h4 {
 }
 
 h2 {
-	color: #e1e1e1;
 	text-shadow: 0px 0px 30px rgba(150, 150, 150, 1);
 	margin-top: 10px;
 	padding: 10px;
 	font-size: 26px;
 	margin-left: 60px;
+	color: #e1e1e1;
+
+	a {
+		text-decoration: none;
+		color: #e1e1e1;
+		margin:0;
+	}
+
+	a:hover{
+		text-decoration: underline;
+	}
 }
 
 li.show_actions {
